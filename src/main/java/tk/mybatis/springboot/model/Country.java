@@ -24,16 +24,31 @@
 
 package tk.mybatis.springboot.model;
 
+import javax.persistence.Column;
+
 public class Country extends BaseEntity {
     /**
      * 名称
      */
+    @Column(name = "country_name")
     private String countryname;
 
     /**
      * 代码
      */
+    @Column(name = "country_code")
+//    @name
     private String countrycode;
+
+    private String createTime;
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
 
     /**
      * 获取名称
